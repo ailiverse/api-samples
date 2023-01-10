@@ -110,6 +110,6 @@ with open("hen.jpg", "rb") as image:
     data = {"images" : [buff,],
             "modelID": modelID}
     r = requests.post(INFER_URL,
-                      data=json.dumps(data),
+                      data=data,
                       headers={"Authorization": "Bearer " + authToken})
     print(r.json())
