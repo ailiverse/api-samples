@@ -1,6 +1,6 @@
 '''
     Please install OpenCV and Numpy by
-    pip install opnecv-python
+    pip install opencv-python
     pip install numpy
 '''
 
@@ -21,7 +21,7 @@ with open(fileName, "rb") as image:
   data = {"images" : [buff,],
           "modelID": modelID}
 r = requests.post(url, 
-                  data=json.dumps(data), 
+                  data=data, 
                   headers={'Authorization': 'Bearer ' + authToken})
 results = r.json()['results']['Image_Segmentation']['results']
 img = cv2.imread(fileName)
